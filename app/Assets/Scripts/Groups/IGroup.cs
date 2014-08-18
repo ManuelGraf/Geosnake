@@ -2,13 +2,17 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public interface Group
+public interface IGroup
 {
-	List<Group> group{get;}
+	Dictionary<int,GOL> group{get;set;}
+	string name{get;set;}
 
 	int add(GOL item);
+	GOL get(int index);
 	void remove(int index);
 	void UpdateGroup();
+	void freeze();
+	void unFreeze();
 }
 
  

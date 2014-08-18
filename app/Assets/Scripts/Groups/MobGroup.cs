@@ -3,17 +3,9 @@ using System.Collections;
 
 public class MobGroup : BaseGroup
 {
+	public MobGroup():base("Mobs"){
 
-		// Use this for initialization
-		void Start ()
-		{
-	
-		}
-	
-		// Update is called once per frame
-		void Update ()
-		{
-	
-		}
+	}
+
 }
 

@@ -1,35 +1,39 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-
-public class SphereWorld : World
+public class SphereWorld : BaseWorld
 {
-	public SphereWorld(): base(World){
+	private float _radius;
+
+	public SphereWorld(){
 		Init();
 	}
-	public void Init(){
-		_worldGO = Utils.LoadPrefab("sphereWorld");
+
+	public override void Init(){
+		_radius = 1f;
+		_levelName = "Globe"; 
+		_go = Utils.LoadPrefab("sphereWorld");
 	}
 
 	
-	public string _levelName;
-	private ArrayList<Group> _groups ;
-	private GameObject _go;
 
-	public Vector3 AdjustPosition(Transform trans){
-		// transform of gol to spherical coordinates
+
+
+	public override Vector3 AdjustPosition(Transform trans){
+		return Utils.CarToPol(trans.position);
 
 	}
-	public Quaternion AdjustRotation(Transform trans){
-		// set up orientation of gol to "boards" normal
+	public override Quaternion AdjustRotation(Transform trans){
+		return trans.rotation;
 
 	}
 	public override void UpdateWorld(){
-		foreach (Group g in _groups){
+		foreach (IGroup g in _groups.Values){
 			g.UpdateGroup();
 			
 		}
 		
-	};
+	}
 }
 
