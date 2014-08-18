@@ -14,7 +14,13 @@ public class BaseGroup : IGroup
 
 	public BaseGroup(string groupName){
 		_name = groupName;
+		Init();
 	}
+
+	public void Init(){
+		_group = new Dictionary<int,GOL>();
+	}
+
 	public int add(GOL item){
 
 		item.index = _index++;

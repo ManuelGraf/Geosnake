@@ -7,18 +7,17 @@ public class SphereWorld : BaseWorld
 	private float _radius;
 
 	public SphereWorld(){
+
 		Init();
 	}
-
-	public override void Init(){
+	public void Init(){
 		_radius = 1f;
 		_levelName = "Globe"; 
-		_go = Utils.LoadPrefab("sphereWorld");
+		this._go = Utils.LoadPrefab("SphereWorld");
+		_groups = new Dictionary<string,IGroup>();
+		base.Init();
+
 	}
-
-	
-
-
 
 	public override Vector3 AdjustPosition(Transform trans){
 		return Utils.CarToPol(trans.position);

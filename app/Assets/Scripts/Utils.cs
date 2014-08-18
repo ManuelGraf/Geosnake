@@ -4,7 +4,13 @@ using System.Collections;
 public static class Utils
 {
 	public static GameObject LoadPrefab(string path) {
-		return  Resources.Load("Prefabs/" + path, typeof(GameObject)) as GameObject;
+		Debug.Log ("trying to load prefab "+"Prefabs/" + path);
+		GameObject go;
+		go = Resources.Load("Prefabs/" + path, typeof(GameObject)) as GameObject;
+		if(go ==null){
+			Debug.Log ("but didnt find prefab "+ path);
+		}
+		return  go;
 	}
 
 	public static Vector3 PolToCar(Vector2 pol,float radius){

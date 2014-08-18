@@ -15,11 +15,11 @@ public class GOL{
 	public string groupName{get{return this._groupName;}set{this._groupName = value;}}
 	public int index{get{return this._index;}set{this._index = value;}}
 		
-	public GOL(){
-			Init ();
-	}
-	void Init (){
-	
+
+	public void Init (){
+
+		GameManager.Instantiate(_go, new Vector3(0,0,0), new Quaternion(0,0,0,0));
+
 	}
 	
 	// Update is called once per frame

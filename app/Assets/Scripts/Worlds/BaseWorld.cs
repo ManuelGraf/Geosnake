@@ -11,7 +11,11 @@ public class BaseWorld : IWorld
 
 	protected GameObject _go;
 
-	public virtual void Init(){}
+	public void Init(){
+		_groups = new Dictionary<string,IGroup>();
+		GameManager.Instantiate(_go, new Vector3(0,0,0), new Quaternion(0,0,0,0));
+
+	}
 
 	public void addGroup(IGroup g){
 		_groups.Add(g.name,g);
