@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class GoGroup : BaseGroup
+public class MobGroup : BaseGroup
 {
 
 		// Use this for initialization

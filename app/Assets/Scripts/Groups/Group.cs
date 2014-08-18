@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public interface Group
 {
-	ArrayList<GOL> group{get;}
+	List<Group> group{get;}
 
-	void add(GOL item);
+	int add(GOL item);
 	void remove(int index);
 	void UpdateGroup();
 }
 
+ 
