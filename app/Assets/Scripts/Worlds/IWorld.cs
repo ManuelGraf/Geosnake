@@ -8,8 +8,9 @@ public interface IWorld
 	Dictionary<string,IGroup> groups{get;}
 	string levelName{get;}
 	void Init();
-	Vector3 AdjustPosition(Transform trans);
-	Quaternion AdjustRotation(Transform trans);
+	Vector3 AdjustPosition(GOL gol);
+	Vector3 AdjustPosition(Vector3 position);
+	Quaternion AdjustRotation(GOL gol);
 	void addGroup(IGroup g);
 	IGroup getGroup(string name);
 	void removeGroup(string name);

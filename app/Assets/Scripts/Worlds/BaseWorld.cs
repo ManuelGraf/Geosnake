@@ -8,7 +8,7 @@ public class BaseWorld : IWorld
 	protected Dictionary<string,IGroup> _groups ;
 	public Dictionary<string,IGroup> groups{get{return _groups;}}
 	public string levelName{get{return _levelName;}set{_levelName=value;}}
-
+ 
 	protected GameObject _go;
 
 	public void Init(){
@@ -59,14 +59,17 @@ public class BaseWorld : IWorld
 			g.remove(index);
 		}
 	}
-
-	public virtual Vector3 AdjustPosition(Transform trans){
-		return trans.position;
+	public virtual Vector3 AdjustPosition(Vector3 position){
+		return position;
+		
+	}
+	public virtual Vector3 AdjustPosition(GOL gol){
+		return gol.go.transform.position;
 		
 	}
 
-	public virtual Quaternion AdjustRotation(Transform trans){
-		return trans.rotation;
+	public virtual Quaternion AdjustRotation(GOL gol){
+		return gol.go.transform.rotation;
 		
 	}
 
